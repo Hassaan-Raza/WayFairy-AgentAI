@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 from crewai import Agent, LLM
-from RoamioTools import search_web_tool
+from WayFairyTools import search_web_tool
 from dotenv import load_dotenv
 load_dotenv()
 

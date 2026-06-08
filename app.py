@@ -10,14 +10,14 @@ os.environ["PYTHONIOENCODING"] = "utf-8"
 os.environ["PYTHONUTF8"] = "1"
 os.environ["CREWAI_KNOWLEDGE_STORAGE_DISABLED"] = "True"
 
-from RoamioAgents import location_expert, guide_expert, packing_expert, planner_expert
-from RoamioTasks import location_task, guide_task, packing_task, planner_task
+from WayFairyAgents import location_expert, guide_expert, packing_expert, planner_expert
+from WayFairyTasks import location_task, guide_task, packing_task, planner_task
 from crewai import Crew, Process
 from pdf_gen import generate_pdf
 
 # ── Page config ───────────────────────────────────────────────
 st.set_page_config(
-    page_title="Roamio",
+    page_title="WayFairy",
     page_icon="🌍",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -421,7 +421,7 @@ st.markdown("<hr style='margin: 0.5rem 0;'>", unsafe_allow_html=True)
 # ── Generate button ───────────────────────────────────────────
 _bl, _bc, _br = st.columns([1, 22, 1])
 with _bc:
-    _generate = st.button("🌍 Generate My Roamio Plan", type="primary", use_container_width=True)
+    _generate = st.button("🌍 Generate My WayFairy Plan", type="primary", use_container_width=True)
 
 if _generate:
     if not all([from_city, destination_city, interests]):
@@ -436,7 +436,7 @@ if _generate:
             if weather else "weather data unavailable"
         )
 
-        with st.spinner("🌍 Roamio agents are planning your trip... This takes 2 to 4 minutes."):
+        with st.spinner("🌍 WayFairy agents are planning your trip... This takes 2 to 4 minutes."):
             try:
                 loc_task  = location_task(location_expert, from_city, destination_city,
                                           date_from, date_to, transport, budget_per_day)
@@ -464,7 +464,7 @@ if _generate:
                     with open("packing_list.md", "r", encoding="utf-8") as f:
                         st.session_state.packing_list = f.read()
 
-                st.success("✅ Your Roamio plan is ready!")
+                st.success("✅ Your WayFairy plan is ready!")
                 st.rerun()
 
             except Exception as e:
@@ -490,7 +490,7 @@ if st.session_state.travel_plan:
             st.download_button(
                 "📄 Download Travel Plan (PDF)",
                 data=pdf_data,
-                file_name=f"{destination_city.replace(' ','_')}_Roamio_Plan.pdf",
+                file_name=f"{destination_city.replace(' ','_')}_WayFairy_Plan.pdf",
                 mime="application/pdf",
                 use_container_width=True
             )
@@ -499,7 +499,7 @@ if st.session_state.travel_plan:
             st.download_button(
                 "📄 Download Travel Plan",
                 data=st.session_state.travel_plan,
-                file_name=f"{destination_city.replace(' ','_')}_Roamio_Plan.md",
+                file_name=f"{destination_city.replace(' ','_')}_WayFairy_Plan.md",
                 mime="text/markdown",
                 use_container_width=True
             )
@@ -547,7 +547,7 @@ st.markdown("""
 <div style="padding: 1rem 0; border-top: 1px solid #D4CCB8; margin-top: 2rem;
             display: flex; justify-content: space-between; align-items: center;">
   <span style="font-family:'DM Mono',monospace; font-size:0.62rem; color:#A09890;">
-    Roamio · AI Travel Planner · Made with ❤️ by Hassaan Raza
+    WayFairy · AI Travel Planner · Made with ❤️ by Hassaan Raza
   </span>
   <span style="font-family:'DM Mono',monospace; font-size:0.62rem; color:#A09890;">
     Powered by CrewAI · Ollama Cloud · DuckDuckGo
