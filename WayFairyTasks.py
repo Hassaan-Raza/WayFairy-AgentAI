@@ -147,7 +147,7 @@ def planner_task(context, agent, from_city, destination_city, interests, date_fr
     return Task(
         description=f"""
 Using ONLY the information provided by the location expert and guide expert,
-create the final complete Roamio travel plan.
+create the final complete WayFairy travel plan.
 
 DO NOT search the web. Use only what the experts have already found.
 
@@ -213,7 +213,7 @@ List the top 3 hotels from the location expert's research with prices.
 
 {transport_note}
 
-# 💡 Roamio Tips
+# 💡 WayFairy Tips
 5 practical insider tips for this specific trip.
 
 Use emojis throughout. Write in an engaging, friendly tone.
