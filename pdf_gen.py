@@ -7,6 +7,7 @@ def generate_pdf(plan_text, transport_mode="plane"):
     pdf.set_margins(20, 20, 20)
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
+    pdf.set_line_width(0)
 
 
     # Title
