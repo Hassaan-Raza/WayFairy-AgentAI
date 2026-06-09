@@ -4,9 +4,10 @@ import re
 
 def generate_pdf(plan_text, transport_mode="plane"):
     pdf = FPDF()
+    pdf.set_margins(20, 20, 20)
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
-    pdf.set_margins(20, 20, 20)
+
 
     # Title
     pdf.set_font("Helvetica", "B", 18)
