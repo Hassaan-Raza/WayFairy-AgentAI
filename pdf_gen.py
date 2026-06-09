@@ -43,7 +43,7 @@ def generate_pdf(plan_text, transport_mode="plane"):
         else:
             pdf.set_font("Helvetica", "", 10)
 
-        pdf.multi_cell(0, 6, line)
+        pdf.multi_cell(pdf.w - pdf.l_margin - pdf.r_margin, 6, line)
 
     # Footer
     pdf.ln(6)
