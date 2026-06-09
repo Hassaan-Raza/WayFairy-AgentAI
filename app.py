@@ -5,6 +5,11 @@ import requests
 from pathlib import Path
 from datetime import datetime, date
 
+# Clean up stale output files from previous runs
+for f in ["travel_plan.md", "city_report.md", "guide_report.md", "packing_list.md"]:
+    if os.path.exists(f):
+        os.remove(f)
+
 os.environ["CREWAI_KNOWLEDGE_DISABLED"] = "True"
 os.environ["PYTHONIOENCODING"] = "utf-8"
 os.environ["PYTHONUTF8"] = "1"
