@@ -136,12 +136,7 @@ def generate_pdf(plan_text, transport_mode="plane"):
             pdf.set_font("Helvetica", "", 10)
             pdf.multi_cell(col_w, 6, "  " + line)
 
-        # Horizontal rule
-        elif re.match(r"^-{3,}$", line) or re.match(r"^={3,}$", line):
-            pdf.ln(2)
-            pdf.set_draw_color(200, 200, 200)
-            pdf.line(pdf.l_margin, pdf.get_y(), pdf.w - pdf.r_margin, pdf.get_y())
-            pdf.ln(3)
+        
 
         else:
             pdf.set_font("Helvetica", "", 10)
