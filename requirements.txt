@@ -8,3 +8,4 @@ requests>=2.31.0
 fpdf2>=2.7.0
 markdown>=3.0.0
 litellm
+ddgs
