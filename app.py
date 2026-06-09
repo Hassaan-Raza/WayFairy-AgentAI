@@ -325,7 +325,7 @@ st.markdown("""
             display: flex; align-items: baseline; gap: 1rem;">
   <span style="font-family:'Playfair Display',serif; font-size:2.6rem; font-weight:700;
                color:#1A1A2E; letter-spacing:-0.02em;">
-    Roam<span style="color:#1A6B8A; font-style:italic;">io</span>
+    Way<span style="color:#1A6B8A; font-style:italic;">Fairy</span>
   </span>
   <span style="font-family:'DM Mono',monospace; font-size:0.65rem; color:#6B7280;
                letter-spacing:0.15em; text-transform:uppercase;
