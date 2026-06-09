@@ -13,7 +13,7 @@ OLLAMA_API_KEY = st.secrets["OLLAMA_API_KEY"]
 OLLAMA_MODEL   = st.secrets.get("OLLAMA_MODEL", "gemma4:31b-cloud")
 
 llm = LLM(
-    model=f"openai/{OLLAMA_MODEL}",
+    model=f"ollama/{OLLAMA_MODEL}",
     api_key=OLLAMA_API_KEY,
     base_url="https://ollama.com/v1",   # <-- this was wrong before
     temperature=0.7,
